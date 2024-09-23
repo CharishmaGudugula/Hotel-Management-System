@@ -1,125 +1,48 @@
 HOTEL- MANAGEMENT SYSTEM
-// using html,css,javascript
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-CSS (style.css)
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2em;
-}
-
-section {
-    background-color: #f7f7f7;
-    padding: 1em;
-    margin-bottom: 1em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    margin-top: 0;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 0.5em;
-}
-
-input, select {
-    padding: 0.5em;
-    margin-bottom: 1em;
-}
-
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #444;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 0.5em;
-    text-align: left;
-}
-
-th {
-    background-color: #333;
-    color: #fff;
-</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Management System</title>
     <link rel="stylesheet" href="style.css">
-<script>
-
 </head>
 <body>
     <header>
         <h1>Hotel Management System</h1>
     </header>
     <main>
-        <section id="room-section">
-            <h2>Room Booking</h2>
-            <form id="room-form">
+        <section id="booking-section">
+            <h2>Room Booking & Guest Information</h2>
+            <form id="booking-form">
                 <label for="room-type">Room Type:</label>
-                <select id="room-type">
+                <select id="room-type" required>
+                    <option value="" disabled selected>Select Room Type</option>
                     <option value="single">Single</option>
                     <option value="double">Double</option>
                     <option value="suite">Suite</option>
                 </select>
+                
                 <label for="check-in">Check-in Date:</label>
-                <input type="date" id="check-in">
+                <input type="date" id="check-in" required>
+                
                 <label for="check-out">Check-out Date:</label>
-                <input type="date" id="check-out">
-                <button id="book-room">Book Room</button>
-            </form>
-        </section>
-        <section id="guest-section">
-            <h2>Guest Information</h2>
-            <form id="guest-form">
+                <input type="date" id="check-out" required>
+
                 <label for="name">Name:</label>
-                <input type="text" id="name">
+                <input type="text" id="name" required>
+                
                 <label for="email">Email:</label>
-                <input type="email" id="email">
+                <input type="email" id="email" required>
+                
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone">
-                <button id="save-guest">Save Guest</button>
+                <input type="tel" id="phone" required>
+
+                <button type="submit" id="book-room">Book Room</button>
             </form>
         </section>
-        <section id="booking-section">
+
+        <section id="booking-list-section">
             <h2>Bookings</h2>
             <table id="booking-table">
                 <thead>
@@ -128,15 +51,18 @@ th {
                         <th>Check-in Date</th>
                         <th>Check-out Date</th>
                         <th>Guest Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="booking-tbody">
-                </tbody>
+                <tbody id="booking-tbody"></tbody>
             </table>
         </section>
     </main>
     <script src="script.js"></script>
-
 </body>
 </html>
+
+
 
